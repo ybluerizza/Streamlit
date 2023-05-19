@@ -33,7 +33,7 @@ model = load_model()
 st.write("""
 # Image Classification System"""
 )
-file=st.file_uploader("Choose image photo from computer",type=["jpg","png"])
+file=st.file_uploader("Choose image photo from computer (eg. Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck)",type=["jpg","png"])
 
 import cv2
 from PIL import Image,ImageOps
