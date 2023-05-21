@@ -33,7 +33,7 @@ model = load_model()
 st.write("""
 # Image Classification System"""
 )
-file=st.file_uploader("Choose image photo from computer eg. Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck" ,type=["jpg","png"])
+file=st.file_uploader("Choose image photo from computer" ,type=["jpg","png"])
 
 import cv2
 from PIL import Image,ImageOps
@@ -46,7 +46,7 @@ def import_and_predict(image_data,model):
     prediction=model.predict(img_reshape)
     return prediction
 if file is None:
-    st.text("Please upload an image file")
+    st.text("Please upload an image file (eg. Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck)")
 else:
     image=Image.open(file)
     st.image(image,use_column_width=True)
